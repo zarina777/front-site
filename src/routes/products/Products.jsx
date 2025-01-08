@@ -24,10 +24,11 @@ const postLikedProduct = async (id, liked) => {
 };
 
 const deleteLikedProduct = async (id, liked) => {
-  const res = await api.delete(`products/${id}/likeds`, liked);
+  const res = await api.delete(`products/${id}/likeds`, {
+    data: { liked }, // Send the liked data inside the 'data' field in the request body
+  });
   return res.data;
 };
-
 const Products = () => {
   const [selectedCat, setSelectedCat] = useState("all");
   const userInfo = localStorage.getItem("info");
@@ -93,9 +94,9 @@ const Products = () => {
   });
 
   const { mutate: deleteLike, isLoading: isUnliking } = useMutation({
-    mutationFn: ({ id, liked }) => deleteLikedProduct(id, { liked }),
+    mutationFn: ({ id, liked }) => deleteLikedProduct(id, liked),
     onSuccess: () => {
-      queryClient.invalidateQueries(["products", selectedCat]);
+      queryClient.invalidateQueries(["products"]);
       toast.success("Product unliked!", {
         position: "bottom-right",
         autoClose: 3000,

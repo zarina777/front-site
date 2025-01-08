@@ -12,7 +12,7 @@ const Layout = () => {
   return (
     <div>
       <div className="sm:p-5 md:p-6 p-4 bg-blue-500">
-        <Container className="flex justify-end gap-5">
+        <Container className="flex justify-end md:gap-5 sm:gap-3 gap-1 ">
           <NavLink
             className={({ isActive }) =>
               `md:text-2xl sm:text-xl text-lg text-white xl:p-4 md:p-3 sm:p-2 p-1 ${isActive ? "border border-white rounded-md" : ""}`

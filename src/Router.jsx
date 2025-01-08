@@ -3,8 +3,6 @@ import Layout from "./components/layout/Layout";
 import Product from "./routes/products/Products";
 import Login from "./routes/login/Login";
 import Home from "./routes/home/Home";
-import CreateProduct from "./routes/products/CreateProduct";
-import EditProduct from "./routes/products/EditProduct";
 import ProtectedRoute from "./components/protectedRoute/protectedRoute";
 import Signup from "./routes/signup/Signup";
 import { ToastContainer } from "react-toastify"; // Import ToastContainer
@@ -25,32 +23,16 @@ export default function Routers() {
               </ProtectedRoute>
             }
           />
-          <Route path="products">
-            <Route
-              index
-              element={
-                <ProtectedRoute>
-                  <Product />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="create"
-              element={
-                <ProtectedRoute>
-                  <CreateProduct />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="edit/:id"
-              element={
-                <ProtectedRoute>
-                  <EditProduct />
-                </ProtectedRoute>
-              }
-            />
-          </Route>
+
+          <Route
+            path="products"
+            element={
+              <ProtectedRoute>
+                <Product />
+              </ProtectedRoute>
+            }
+          />
+
           <Route
             path="likeds"
             element={

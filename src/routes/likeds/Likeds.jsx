@@ -99,7 +99,7 @@ const Likeds = () => {
     <div className="overflow-x-auto py-6">
       <ToastContainer />
 
-      <h2 className="text-white text-3xl text-center font-extrabold mb-7">Products</h2>
+      <h2 className=" text-xl text-center font-extrabold mb-7">Liked Products</h2>
 
       <div className="min-w-full">
         {productsLoading && (
@@ -110,7 +110,7 @@ const Likeds = () => {
         {!products?.length && !productsLoading && (
           <div className="text-xl px-4 py-10 text-gray-700 text-center w-full h-full">No products available.</div>
         )}
-        <div className="grid gap-8 md:grid-cols-4 sm:grid-cols-3 grid-cols-1 px-4">
+        <div className="grid gap-y-5 md:gap-8 sm:gap-4 gap-2 xl:grid-cols-4  md:grid-cols-3 sm:grid-cols-2 grid-cols-1 px-4">
           {products?.map(
             (product) =>
               product?.likeds?.includes(userID) && (

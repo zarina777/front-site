@@ -145,7 +145,7 @@ const Products = () => {
         </select>
       </div>
 
-      <h2 className="text-white text-3xl text-center font-extrabold mb-7">Products</h2>
+      <h2 className=" sm:text-3xl text-xl text-center font-extrabold mb-7">Products</h2>
 
       <div className="min-w-full">
         {productsLoading && (
@@ -156,7 +156,7 @@ const Products = () => {
         {!products?.length && !productsLoading && (
           <div className="text-xl px-4 py-10 text-gray-700 text-center w-full h-full">No products available.</div>
         )}
-        <div className="grid gap-8 md:grid-cols-4 sm:grid-cols-3 grid-cols-1 px-4">
+        <div className="grid md:gap-8  sm:gap-4 gap-2 gap-y-5 xl:grid-cols-4  md:grid-cols-3 sm:grid-cols-2 grid-cols-1 px-4">
           {products?.map((product) => (
             <div key={product._id} className="hover:bg-blue-gray-50 cursor-default shadow-xl border rounded-md overflow-hidden flex flex-col">
               <div className="w-full aspect-video bg-gray-400"></div>

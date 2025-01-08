@@ -11,31 +11,60 @@ const Layout = () => {
   }
   return (
     <div>
-      <div className="p-7 bg-blue-500">
+      <div className="sm:p-5 md:p-6 p-4 bg-blue-500">
         <Container className="flex justify-end gap-5">
-          <NavLink className={({ isActive }) => `text-2xl text-white p-4 ${isActive ? "border border-white rounded-md" : ""}`} to="/">
+          <NavLink
+            className={({ isActive }) =>
+              `md:text-2xl sm:text-xl text-lg text-white xl:p-4 md:p-3 sm:p-2 p-1 ${isActive ? "border border-white rounded-md" : ""}`
+            }
+            to="/"
+          >
             Home
           </NavLink>
-          <NavLink className={({ isActive }) => `text-2xl text-white p-4 ${isActive ? "border border-white rounded-md" : ""}`} to="/products">
+          <NavLink
+            className={({ isActive }) =>
+              `md:text-2xl sm:text-xl text-lg text-white xl:p-4 md:p-3 sm:p-2 p-1 ${isActive ? "border border-white rounded-md" : ""}`
+            }
+            to="/products"
+          >
             Products
           </NavLink>
           {logoutButton && (
-            <NavLink className={({ isActive }) => `text-2xl text-white p-4 ${isActive ? "border border-white rounded-md" : ""}`} to="/likeds">
+            <NavLink
+              className={({ isActive }) =>
+                `md:text-2xl sm:text-xl text-lg text-white xl:p-4 md:p-3 sm:p-2 p-1 ${isActive ? "border border-white rounded-md" : ""}`
+              }
+              to="/likeds"
+            >
               Likeds
             </NavLink>
           )}
           {!logoutButton && (
             <>
-              <NavLink className={({ isActive }) => `text-2xl text-white p-4 ${isActive ? "border border-white rounded-md" : ""}`} to="/login">
+              <NavLink
+                className={({ isActive }) =>
+                  `md:text-2xl sm:text-xl text-lg text-white xl:p-4 md:p-3 sm:p-2 p-1 ${isActive ? "border border-white rounded-md" : ""}`
+                }
+                to="/login"
+              >
                 Log in
               </NavLink>
-              <NavLink className={({ isActive }) => `text-2xl text-white p-4 ${isActive ? "border border-white rounded-md" : ""}`} to="/signup">
+              <NavLink
+                className={({ isActive }) =>
+                  `md:text-2xl sm:text-xl text-lg text-white xl:p-4 md:p-3 sm:p-2 p-1 ${isActive ? "border border-white rounded-md" : ""}`
+                }
+                to="/signup"
+              >
                 Sign up
               </NavLink>
             </>
           )}
           {logoutButton && (
-            <NavLink onClick={logout} className="text-2xl text-white p-4 rounded-md hover:border hover:border-white" to="/login">
+            <NavLink
+              onClick={logout}
+              className="md:text-2xl sm:text-xl text-lg text-white xl:p-4 md:p-3 sm:p-2 p-1 rounded-md hover:border hover:border-white"
+              to="/login"
+            >
               Log out
             </NavLink>
           )}

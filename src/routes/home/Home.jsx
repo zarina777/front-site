@@ -26,7 +26,7 @@ const Home = () => {
     return <h1>{error}</h1>;
   }
   return (
-    <div className="p-6">
+    <div className="p-6 text-2xl">
       Wellcome Home page, <span className="text-blue-900 text-2xl">{data?.username}</span>
     </div>
   );

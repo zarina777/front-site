@@ -37,22 +37,22 @@ const Signup = () => {
   const navigate = useNavigate();
   return (
     <Container className="p-10 flex flex-col items-center justify-center bg-blue-100 h-[90vh]">
-      <h1 className="text-white text-[50px] font-extrabold mb-12">Sign up</h1>
-      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 px-20 justify-around  w-full rounded-lg">
-        <label className="text-2xl text-white">Enter username</label>
-        <input {...register("username", { required: "Username is required" })} className="p-3 border" type="text" />
+      <h1 className="text-white text-5xl font-extrabold mb-12">Sign up</h1>
+      <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-5 px-10  md:px-20 justify-around  w-full rounded-lg">
+        <label className="sm:text-2xl text-xl text-white">Enter username</label>
+        <input {...register("username", { required: "Username is required" })} className="p-2 sm:p-3 border" type="text" />
         {errors.username && <p className="text-red-500">{errors.username.message}</p>}
 
-        <label className="text-2xl text-white">Enter password</label>
-        <input {...register("password", { required: "Password is required" })} className="p-3 border" type="password" />
+        <label className="sm:text-2xl text-xl text-white">Enter password</label>
+        <input {...register("password", { required: "Password is required" })} className="p-2 sm:p-3 border" type="password" />
         {errors.password && <p className="text-red-500">{errors.password.message}</p>}
 
         {errors.server && <p className="text-red-500">{errors.server.message}</p>}
 
-        <button className="items-end bg-blue-700 text-2xl p-4 text-white hover:bg-blue-500 rounded-[15px]" type="submit">
+        <button className="items-end bg-blue-700 sm:text-2xl text-xl p-2 sm:p-3 text-white hover:bg-blue-500 rounded-[15px]" type="submit">
           submit
         </button>
-        <p className="text-center text-black text-xl w-full">
+        <p className="text-center text-black sm:text-2xl text-xl w-full">
           if you have an account,{" "}
           <Link className="underline decoration-[1px] decoration-black p-2 " to="/login">
             Login
